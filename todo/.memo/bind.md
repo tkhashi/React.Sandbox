@@ -1,11 +1,13 @@
 # Function.prototype.bind(...arg)
-関数内の`this`を第一引数に更新して関数オブジェクトを生成して返す（関数は実行されない）。
+関数内の`this`を第一引数に更新して関数オブジェクトを生成して返す（関数は実行されない）。  
+ただし、[アロー関数では`this`の扱いが変わる](https://www.estie.jp/blog/entry/javascript-bind-this)ため注意
+
 
 第二引数以降はレシーバのFunctionの引数として渡される。
 レシーバに関数がない場合は無視される。
 
-### 使いどころ
-#### thisを指定
+## 使いどころ
+### thisを指定
 Functionの中で`this`を扱っている場合、`this`は呼び出し元に依存する。
 
 ```js
@@ -44,7 +46,7 @@ console.log(getYFunc()) // output: 31  関数なので()で実行
 console.log(getY.bind(module)()) // output: 31 直接呼び出す場合も同様
 ```
 
-#### 引数を指定した関数オブジェクト
+### 引数を指定した関数オブジェクト
 引数を指定した関数オブジェクトとして使う場合は、`bind()`で引数を拘束した関数オブジェクトとして扱う。
 
 ```js
@@ -55,7 +57,7 @@ const something = getSomething.bind(null,'SOMETHING'); // 引数を拘束
 console.log(something()) // output: 'SOMETHING' // 引数はbind()で拘束されているため新たな引数は不要
 ```
 
-#### イベントハンドラとして扱う
+### イベントハンドラとして扱う
 `bind()`の返り値は関数オブジェクトなのでイベントハンドラとして扱える。
 
 ```jsx
@@ -79,7 +81,7 @@ return (
 
 参考: [Function.prototype.bind() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)  
 
-## this
+## thisについて
 thisの既定値はグローバルオブジェクトとなり、実行環境により変わる。
 - ブラウザ
   - window
