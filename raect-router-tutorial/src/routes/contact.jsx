@@ -1,6 +1,13 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "../contacts";
 
-export default function contact() {
+export async function Loader({params}) {
+    const contact = await getContact(params.contactId);
+    return {contact}
+}
+
+export default function Contact() {
+    // const { contact } = useLoaderData();
     const contact = {
         first: "Your",
         last: "Name",
@@ -63,7 +70,7 @@ export default function contact() {
     );
 }
 
-function Favorite({ contact }) {
+function Favorite(contact) {
     let favorite = contact.favorite;
     return(
         <Form method="post">
