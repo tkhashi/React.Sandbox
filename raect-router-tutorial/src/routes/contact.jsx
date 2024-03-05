@@ -7,15 +7,15 @@ export async function Loader({params}) {
 }
 
 export default function Contact() {
-    // const { contact } = useLoaderData();
-    const contact = {
-        first: "Your",
-        last: "Name",
-        avatar: "https://placekitten.com/g/200/200",
-        twitter:"your_handle",
-        notes: "Some notes",
-        favorite: true,
-    }
+    const { contact } = useLoaderData();
+    // const contact = {
+    //     first: "Your",
+    //     last: "Name",
+    //     avatar: "https://placekitten.com/g/200/200",
+    //     twitter:"your_handle",
+    //     notes: "Some notes",
+    //     favorite: true,
+    // }
 
     return (
         <div>
@@ -56,13 +56,14 @@ export default function Contact() {
                     <button type="submit">Edit</button>
                 </Form>
                 <Form 
-                method="post"
-                action="destroy"
-                onSubmit={(event) =>{
-                    if (!confirm("Please confirm you want to delete this record.")) {
-                        event.preventDefault();
-                    }
-                }}>
+                    method="post"
+                    action="destroy"
+                    onSubmit={(event) =>{
+                        if (!confirm("Please confirm you want to delete this record.")) {
+                            event.preventDefault();
+                        }
+                    }}
+                >
                     <button type="submit">Delete</button>
                 </Form>
             </div>
