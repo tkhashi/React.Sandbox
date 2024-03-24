@@ -11,7 +11,7 @@ import { Poppins } from "next/font/google";
 // local relative import
 // 
 const headingFont = localFont({
-    src: "../../public/fonts/font.woff2"
+    src: "../../public/font.woff2"
 })
 
 const textFont = Poppins({
