@@ -10,6 +10,7 @@ const MarcketingLayout = ({
         <div className="h-full bg-slate-100">
             <Navbar/>
             <main className="pt-40 pb-20 bg-slate-100">
+                <div> Marcketing Layout </div>
                 {children}
             </main>
             <Footer/>

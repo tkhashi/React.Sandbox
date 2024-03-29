@@ -11,8 +11,8 @@ export default authMiddleware({
   // authentication information:
   // ignoredRoutes: ['/no-auth-in-this-route'],
 	publicRoutes: ["/"],
+	// debug: true,
 	afterAuth(auth, req) {
-
 		if (auth.userId && auth.isPublicRoute) {
 			let path = "/select-org";
 

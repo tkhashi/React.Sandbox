@@ -7,6 +7,7 @@ const PlatformLayout = ({
 }) =>{
     return(
         <ClerkProvider>
+        <div> Platform Layout </div>
             {children}
         </ClerkProvider>
     )
