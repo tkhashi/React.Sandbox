@@ -1,4 +1,3 @@
-export const siteConfig ={
-    name: "Taskify",
-    
-}
+export const siteConfig = {
+  name: "Taskify",
+};

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     {
       url: "/logo.svg",
       href: "/logo.svg",
-    }
-  ]
+    },
+  ],
 };
 
 export default function RootLayout({
