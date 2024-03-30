@@ -4,9 +4,15 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "standard-with-typescript",
         "plugin:react/recommended",
         "prettier",
+        "next",
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/stylistic",
+        "plugin:react-hooks/recommended",
+        'plugin:@next/next/recommended',
     ],
     "overrides": [
         {
@@ -26,7 +32,7 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
     ],
     "rules": {
     }
