@@ -17,7 +17,7 @@ interface SidebarProps {
 export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
   const [expanded, setExpanded] = useLocalStorage<Record<string, any>>(
     storageKey,
-    {},
+    {}
   );
 
   const { organization: activeOrganization, isLoaded: isLoadedOrg } =
@@ -36,7 +36,7 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
       }
       return acc;
     },
-    [],
+    []
   );
 
   const onExpand = (id: string) => {
@@ -49,15 +49,15 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
   if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
     return (
       <>
-        <Skeleton>NOW LOADING...</Skeleton>
-        {/* <div className="flex items-center justify-between mb-2"> */}
-        {/* <Skeleton></Skeleton> */}
-        {/* </div> */}
-        {/* <div className="space-y"> */}
-        {/* NavItem.Skeleton */}
-        {/* NavItem.Skeleton */}
-        {/* NavItem.Skeleton */}
-        {/* </div> */}
+        <div className="flex items-center justify-between mb-2">
+          <Skeleton className="h-10 w-[50%]" />
+          <Skeleton className="h-10 w-10" />
+        </div>
+        <div className="space-y-2">
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+        </div>
       </>
     );
   }
